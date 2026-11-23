@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота — Блоки, вкладеність та центрування тексту</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        header, section, footer {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        .center-box {
+            display: flex;
+            align-items: center;     
+            justify-content: center; 
+            text-align: center;
+        }
+
+        .single-block {
+            height: 120px;
+            background-color: #e7f1ff;
+            border: 3px solid #0d6efd;
+            border-radius: 8px;
+            color: #084298;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .outer-block {
+            background-color: #fff3cd;
+            border: 3px dashed #fd7e14;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .middle-block {
+            background-color: #d1e7dd;
+            border: 2px solid #198754;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 12px;
+        }
+
+        .inner-block {
+            min-height: 100px;
+            background-color: #cfe2ff;
+            border: 2px solid #0a58ca;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 12px;
+            color: #052c65;
+            font-weight: bold;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            background-color: #f8f9fa;
+            border: 2px solid #6c757d;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .card-frame {
+            flex: 1 1 240px;
+            min-height: 160px;
+            background: linear-gradient(135deg, #6610f2, #0d6efd);
+            border: 3px solid #212529;
+            border-radius: 10px;
+            padding: 14px;
+            box-sizing: border-box;
+        }
+
+        .card-inner {
+            height: 100%;
+            min-height: 126px;
+            background-color: rgba(255, 255, 255, 0.92);
+            border: 2px dotted #6610f2;
+            border-radius: 6px;
+            padding: 12px;
+            box-sizing: border-box;
+            color: #212529;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Практична робота: Робота з блоками та вкладеність</h1>
+        <p><strong>Виконав:</strong> студент групи ІПЗ-24-1</p>
+        <p>
+            <a href="index.html">← Посилання та кнопки</a> |
+            <a href="forms.html">← HTML-форми та JS</a> |
+            <a href="animation.html">← Анімація</a>
+        </p>
+    </header>
+
+    <section>
+        <h2>1. Окремий блок з рамкою, фоном і текстом по центру</h2>
+        <p>Використано <code>display: flex</code>, <code>align-items: center</code> та <code>justify-content: center</code>, щоб текст був рівно по центру незалежно від висоти блоку.</p>
+
+        <div class="single-block center-box">
+            Цей текст розташований точно по центру блоку (ІПЗ-24-1)
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Вкладеність блоків один в одного (Зовнішній → Середній → Внутрішній)</h2>
+        <p>Кожен наступний блок знаходиться всередині попереднього та має власний фон, рамку і внутрішні відступи (<code>padding</code>).</p>
+
+        <div class="outer-block">
+            <div style="text-align: center; font-weight: bold; color: #984c0c;">
+                Зовнішній блок (фон: світло-жовтий, рамка: пунктирна помаранчева)
+            </div>
+
+            <div class="middle-block">
+                <div style="text-align: center; font-weight: bold; color: #0f5132;">
+                    Середній вкладений блок (фон: м'ятний, рамка: суцільна зелена)
+                </div>
+
+                <div class="inner-block center-box">
+                    Внутрішній блок: текст по центру на третьому рівні вкладеності!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section>
+        <h2>3. Контейнер з вкладеними блоками-картками</h2>
+        <p>Зовнішній сірий блок об'єднує три картки. У кожній картці є блок-рамка з градієнтним фоном, а всередині нього — світлий блок із текстом по центру.</p>
+
+        <div class="cards-container">
+            <div class="card-frame">
+                <div class="card-inner center-box">
+                    Блок 1<br>HTML-структура
+                </div>
+            </div>
+
+            <div class="card-frame">
+                <div class="card-inner center-box">
+                    Блок 2<br>CSS-оформлення
+                </div>
+            </div>
+
+            <div class="card-frame">
+                <div class="card-inner center-box">
+                    Блок 3<br>Вкладеність div
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; color: #666;">
+        <p>© 2026 | Студентська робота | Група ІПЗ-24-1</p>
+    </footer>
+
+</body>
+</html>
